@@ -19,9 +19,9 @@ class FooterScreen extends StatelessWidget {
         Container(
           padding: EdgeInsets.symmetric(horizontal: hPad, vertical: 70),
           child: isMobile
-              ? Column(children: [_ContactLeft(center: true), const SizedBox(height: 40), _ContactRight()])
+              ? Column(children: [const _ContactLeft(center: true), const SizedBox(height: 40), _ContactRight()])
               : Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                  Expanded(flex: 5, child: _ContactLeft()),
+                  const Expanded(flex: 5, child: _ContactLeft()),
                   const SizedBox(width: 60),
                   Expanded(flex: 4, child: _ContactRight()),
                 ]),
@@ -36,14 +36,14 @@ class FooterScreen extends StatelessWidget {
           child: isMobile
               ? Column(children: [
                   _logo(), const SizedBox(height: 12),
-                  Text('© 2025 EditPro Academy. All rights reserved.',
+                  Text('© 2026 EditPro Academy. All rights reserved.',
                     style: GoogleFonts.dmSans(fontSize: 12, color: kTextMuted)),
                   const SizedBox(height: 16),
                   _quickLinks(),
                 ])
               : Row(children: [
                   _logo(), const Spacer(),
-                  Text('© 2025 EditPro Academy. All rights reserved.',
+                  Text('© 2026 EditPro Academy. All rights reserved.',
                     style: GoogleFonts.dmSans(fontSize: 12, color: kTextMuted)),
                   const Spacer(),
                   _quickLinks(),
@@ -103,20 +103,20 @@ class _ContactLeft extends StatelessWidget {
         textAlign: align,
         style: GoogleFonts.dmSans(fontSize: 14, color: kTextMuted, height: 1.6)),
       const SizedBox(height: 28),
-      _ContactItem(icon: Icons.email_rounded,       color: kRed,    label: 'info@editproacademy.com'),
+      const _ContactItem(icon: Icons.email_rounded,       color: kRed,    label: 'info@editproacademy.com'),
       const SizedBox(height: 12),
-      _ContactItem(icon: Icons.phone_rounded,        color: kGold,   label: '+880 1700-000000'),
+      const _ContactItem(icon: Icons.phone_rounded,        color: kGold,   label: '+880 1700-000000'),
       const SizedBox(height: 12),
-      _ContactItem(icon: Icons.location_on_rounded,  color: kCyan,   label: 'Mohakhali, Dhaka, Bangladesh'),
+      const _ContactItem(icon: Icons.location_on_rounded,  color: kCyan,   label: 'Mohakhali, Dhaka, Bangladesh'),
       const SizedBox(height: 28),
       // Social icons
       Row(
         mainAxisAlignment: center ? MainAxisAlignment.center : MainAxisAlignment.start,
-        children: [
+        children: const [
           _SocialBtn(icon: Icons.play_circle_fill_rounded, color: kRed,    label: 'YouTube'),
-          const SizedBox(width: 12),
+          SizedBox(width: 12),
           _SocialBtn(icon: Icons.camera_alt_rounded,       color: kPurple, label: 'Instagram'),
-          const SizedBox(width: 12),
+          SizedBox(width: 12),
           _SocialBtn(icon: Icons.chat_bubble_rounded,      color: kCyan,   label: 'Discord'),
         ],
       ),
@@ -196,13 +196,13 @@ class _ContactRight extends StatelessWidget {
         Text('We\'ll get back to you within 2 hours.',
           style: GoogleFonts.dmSans(fontSize: 13, color: kTextMuted)),
         const SizedBox(height: 24),
-        _Field(hint: 'Your full name', icon: Icons.person_outline_rounded),
+        const _Field(hint: 'Your full name', icon: Icons.person_outline_rounded),
         const SizedBox(height: 14),
-        _Field(hint: 'Email address', icon: Icons.email_outlined),
+        const _Field(hint: 'Email address', icon: Icons.email_outlined),
         const SizedBox(height: 14),
-        _Field(hint: 'Phone number', icon: Icons.phone_outlined),
+        const _Field(hint: 'Phone number', icon: Icons.phone_outlined),
         const SizedBox(height: 14),
-        _Field(hint: 'Which course interests you?', icon: Icons.school_outlined, multiline: true),
+        const _Field(hint: 'Which course interests you?', icon: Icons.school_outlined, multiline: true),
         const SizedBox(height: 22),
         SizedBox(
           width: double.infinity,
@@ -211,7 +211,7 @@ class _ContactRight extends StatelessWidget {
             decoration: BoxDecoration(
               gradient: kRedGold,
               borderRadius: BorderRadius.circular(50),
-              boxShadow: [BoxShadow(color: kRed.withOpacity(0.3), blurRadius: 16)],
+              boxShadow: [BoxShadow(color: kRed.withValues(alpha: 0.3), blurRadius: 16)],
             ),
             child: Center(child: Text('Send Message →',
               style: GoogleFonts.spaceGrotesk(

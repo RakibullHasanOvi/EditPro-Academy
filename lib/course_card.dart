@@ -42,11 +42,11 @@ class _CourseCardState extends State<CourseCard> with SingleTickerProviderStateM
             color: kBg2,
             borderRadius: BorderRadius.circular(22),
             border: Border.all(
-              color: _hovered ? c.accent.withOpacity(0.5) : kBorder,
+              color: _hovered ? c.accent.withValues(alpha: 0.5) : kBorder,
               width: 1.5,
             ),
             boxShadow: _hovered
-                ? [BoxShadow(color: c.accent.withOpacity(0.18), blurRadius: 40, spreadRadius: 2)]
+                ? [BoxShadow(color: c.accent.withValues(alpha: 0.18), blurRadius: 40, spreadRadius: 2)]
                 : [BoxShadow(color: Colors.black.withValues(alpha: 0.3), blurRadius: 16)],
           ),
           child: Stack(
@@ -57,7 +57,7 @@ class _CourseCardState extends State<CourseCard> with SingleTickerProviderStateM
                   width: 180, height: 180,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: c.accent.withOpacity(0.04),
+                    color: c.accent.withValues(alpha: 0.04),
                   ),
                 )),
 
@@ -71,8 +71,8 @@ Padding(
                       Container(
                         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                         decoration: BoxDecoration(
-                          color: c.accent.withOpacity(0.1),
-                          border: Border.all(color: c.accent.withOpacity(0.3)),
+                          color: c.accent.withValues(alpha: 0.1),
+                          border: Border.all(color: c.accent.withValues(alpha: 0.3)),
                           borderRadius: BorderRadius.circular(50),
                         ),
                         child: Text(c.tag, style: GoogleFonts.spaceGrotesk(
@@ -101,8 +101,8 @@ Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
-                          colors: [c.accent.withOpacity(0.15), c.accent.withOpacity(0.05)]),
-                        border: Border.all(color: c.accent.withOpacity(0.25)),
+                          colors: [c.accent.withValues(alpha: 0.15), c.accent.withValues(alpha: 0.05)]),
+                        border: Border.all(color: c.accent.withValues(alpha: 0.25)),
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: Row(mainAxisSize: MainAxisSize.min, children: [
@@ -143,11 +143,11 @@ Padding(
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
                             colors: _hovered
-                                ? [c.accent, c.accent.withOpacity(0.7)]
-                                : [c.accent.withOpacity(0.8), c.accent.withOpacity(0.5)]),
+                                ? [c.accent, c.accent.withValues(alpha: 0.7)]
+                                : [c.accent.withValues(alpha: 0.8), c.accent.withValues(alpha: 0.5)]),
                           borderRadius: BorderRadius.circular(50),
                           boxShadow: _hovered
-                              ? [BoxShadow(color: c.accent.withOpacity(0.4), blurRadius: 20)]
+                              ? [BoxShadow(color: c.accent.withValues(alpha: 0.4), blurRadius: 20)]
                               : [],
                         ),
                         child: TextButton(

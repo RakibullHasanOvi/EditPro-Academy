@@ -23,11 +23,11 @@ class HeroScreen extends StatelessWidget {
 
           // Glow blobs
           Positioned(top: -120, right: -80,
-            child: _Blob(size: 500, color: kRed.withOpacity(0.06))),
+            child: _Blob(size: 500, color: kRed.withValues(alpha: 0.06))),
           Positioned(top: 100, left: -100,
-            child: _Blob(size: 350, color: kCyan.withOpacity(0.05))),
+            child: _Blob(size: 350, color: kCyan.withValues(alpha: 0.05))),
           Positioned(bottom: -60, right: 200,
-            child: _Blob(size: 300, color: kGold.withOpacity(0.05))),
+            child: _Blob(size: 300, color: kGold.withValues(alpha: 0.05))),
 
           Padding(
             padding: EdgeInsets.fromLTRB(
@@ -51,7 +51,7 @@ class _DesktopHero extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Expanded(flex: 55, child: _HeroLeft()),
+        const Expanded(flex: 55, child: _HeroLeft()),
         const SizedBox(width: 48),
         Expanded(flex: 45, child: _HeroRight()),
       ],
@@ -64,7 +64,7 @@ class _MobileHero extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(children: [
-      _HeroLeft(center: true),
+      const _HeroLeft(center: true),
       const SizedBox(height: 48),
       _HeroRight(),
     ]);
@@ -82,8 +82,8 @@ class _HeroLeft extends StatelessWidget {
     final cross = center ? CrossAxisAlignment.center : CrossAxisAlignment.start;
 
     return Column(crossAxisAlignment: cross, children: [
-      FadeInWidget(
-        delay: const Duration(milliseconds: 100),
+      const FadeInWidget(
+        delay: Duration(milliseconds: 100),
         child: GlowTag(label: '🎬 Bangladesh\'s #1 YouTube Training', color: kRed),
       ),
       const SizedBox(height: 24),
@@ -196,19 +196,19 @@ class _HeroRight extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
             border: Border.all(color: kBorder),
             boxShadow: [
-              BoxShadow(color: kRed.withOpacity(0.1), blurRadius: 40, spreadRadius: 4),
+              BoxShadow(color: kRed.withValues(alpha: 0.1), blurRadius: 40, spreadRadius: 4),
             ],
           ),
           child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             // Fake video thumbnail
             Container(
               height: 180,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [const Color(0xFF1A0A0A), kBg3],
+                  colors: [Color(0xFF1A0A0A), kBg3],
                   begin: Alignment.topLeft, end: Alignment.bottomRight,
                 ),
-                borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
+                borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
               ),
               child: Stack(
                 alignment: Alignment.center,
@@ -232,9 +232,9 @@ class _HeroRight extends StatelessWidget {
                   Container(
                     width: 56, height: 56,
                     decoration: BoxDecoration(
-                      color: kRed.withOpacity(0.9),
+                      color: kRed.withValues(alpha: 0.9),
                       shape: BoxShape.circle,
-                      boxShadow: [BoxShadow(color: kRed.withOpacity(0.5), blurRadius: 20)],
+                      boxShadow: [BoxShadow(color: kRed.withValues(alpha: 0.5), blurRadius: 20)],
                     ),
                     child: const Icon(Icons.play_arrow_rounded, color: kWhite, size: 30),
                   ),
@@ -260,9 +260,9 @@ class _HeroRight extends StatelessWidget {
                 Text('How I Made \$4,200 From One\nFaceless YouTube Channel',
                   style: GoogleFonts.spaceGrotesk(fontSize: 14, fontWeight: FontWeight.w700, color: kWhite, height: 1.4)),
                 const SizedBox(height: 10),
-                Row(children: [
+                const Row(children: [
                   _Chip(label: '2.3M views', color: kGold),
-                  const SizedBox(width: 8),
+                  SizedBox(width: 8),
                   _Chip(label: 'Cash Cow', color: kCyan),
                 ]),
               ]),
@@ -273,14 +273,14 @@ class _HeroRight extends StatelessWidget {
         const SizedBox(height: 16),
 
         // Bottom two mini cards
-        Row(children: [
+        const Row(children: [
           Expanded(child: _MiniCard(
             icon: Icons.auto_awesome_rounded,
             color: kGold,
             title: 'AI Tools',
             sub: 'ElevenLabs · MidJourney',
           )),
-          const SizedBox(width: 12),
+          SizedBox(width: 12),
           Expanded(child: _MiniCard(
             icon: Icons.verified_rounded,
             color: kCyan,

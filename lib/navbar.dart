@@ -17,8 +17,8 @@ class NavBar extends StatelessWidget {
       duration: const Duration(milliseconds: 350),
       padding: EdgeInsets.symmetric(horizontal: isMobile ? 20 : 48, vertical: 16),
       decoration: BoxDecoration(
-        color: scrolled ? kBg.withOpacity(0.96) : Colors.transparent,
-        border: scrolled ? Border(bottom: BorderSide(color: kBorder)) : null,
+        color: scrolled ? kBg.withValues(alpha: 0.96) : Colors.transparent,
+        border: scrolled ? const Border(bottom: BorderSide(color: kBorder)) : null,
         boxShadow: scrolled
             ? [BoxShadow(color: Colors.black.withValues(alpha: 0.5), blurRadius: 24)]
             : [],
@@ -81,7 +81,7 @@ class _MobileNav extends StatelessWidget {
       elevation: 16,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(14),
-        side: BorderSide(color: kBorder),
+        side: const BorderSide(color: kBorder),
       ),
       onSelected: (v) {
         if (v == 'home')     scrollTo(heroKey);

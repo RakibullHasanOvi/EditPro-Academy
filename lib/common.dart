@@ -76,7 +76,7 @@ class _GradientButtonState extends State<GradientButton> {
             gradient: widget.gradient,
             borderRadius: BorderRadius.circular(50),
             boxShadow: [BoxShadow(
-              color: kRed.withOpacity(_hovered ? 0.5 : 0.25),
+              color: kRed.withValues(alpha: _hovered ? 0.5 : 0.25),
               blurRadius: _hovered ? 28 : 14,
               offset: const Offset(0, 6),
             )],

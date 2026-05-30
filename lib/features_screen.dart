@@ -23,7 +23,7 @@ class FeaturesScreen extends StatelessWidget {
       ),
       padding: EdgeInsets.symmetric(horizontal: hPad, vertical: 90),
       child: Column(children: [
-        FadeInWidget(
+        const FadeInWidget(
           child: GlowTag(label: 'Why EditPro Academy', color: kGold, icon: Icons.star_rounded),
         ),
         const SizedBox(height: 16),
@@ -139,11 +139,11 @@ class _CtaBanner extends StatelessWidget {
       padding: const EdgeInsets.all(40),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [kRed.withOpacity(0.15), kGold.withOpacity(0.08)],
+          colors: [kRed.withValues(alpha: 0.15), kGold.withValues(alpha: 0.08)],
           begin: Alignment.topLeft, end: Alignment.bottomRight,
         ),
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: kRed.withOpacity(0.2)),
+        border: Border.all(color: kRed.withValues(alpha: 0.2)),
       ),
       child: isMobile
           ? Column(children: [
@@ -177,7 +177,7 @@ class _CtaBanner extends StatelessWidget {
     decoration: BoxDecoration(
       gradient: kRedGold,
       borderRadius: BorderRadius.circular(50),
-      boxShadow: [BoxShadow(color: kRed.withOpacity(0.35), blurRadius: 20)],
+      boxShadow: [BoxShadow(color: kRed.withValues(alpha: 0.35), blurRadius: 20)],
     ),
     child: Text('Reserve My Spot →',
       style: GoogleFonts.spaceGrotesk(
